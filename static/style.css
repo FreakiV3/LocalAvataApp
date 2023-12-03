@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.png') center/cover fixed;
+    overflow: hidden;
+    margin: 0;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.glass-container:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+form {
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #2bbbad;
+    outline: none;
+}
+
+.premium-btn, .free-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding: 15px 30px;
+    border: 2px solid #ff85dd; /* Couleur Kawaii pour le bouton */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.free-btn {
+    border-color: #7fd7ff; /* Couleur Kawaii pour le bouton gratuit */
+}
+
+.premium-btn:hover,
+.free-btn:hover {
+    color: #ff85dd;
+    border-color: #ff85dd;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(255, 133, 221, 0.8), 0 0 25px rgba(255, 133, 221, 0.8), 0 0 50px rgba(255, 133, 221, 0.8), 0 0 200px rgba(255, 133, 221, 0.8);
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars .star {
+    animation: twinkle 1s infinite;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

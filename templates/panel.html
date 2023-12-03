@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='panel.css') }}">
+  <title>VRChat Cards</title>
+</head>
+<body>
+
+<div class="panel-box">
+  <div class="card-container">
+    {% for item in data %}
+      <div class="card">
+        <div class="card-content">
+          <img class="card-img" src="{{ item.thumbnailImageUrl }}" alt="{{ item.name }}">
+          <div class="card-title">{{ item.name }}</div>
+          <div class="card-description">{{ item.description }}</div>
+          <div class="card-buttons">
+            <button onclick="showMoreInfo('{{ item.id }}', '{{ item.name }}', '{{ item.created_at }}', '{{ item.updated_at }}')">More Info</button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="info-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="info-content"></div>
+  </div>
+</div>
+
+<script>
+  function showMoreInfo(id, name, createdAt, updatedAt) {
+    const infoContent = `
+      <h2>${name}</h2>
+      <p><strong>ID:</strong> ${id}</p>
+      <p><strong>Created At:</strong> ${createdAt}</p>
+      <p><strong>Updated At:</strong> ${updatedAt}</p>
+      <p><strong>File Location:</strong> Logs/INFO_WORLDS.json</p>
+    `;
+    document.getElementById('info-content').innerHTML = infoContent;
+    document.getElementById('info-modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('info-modal').style.display = 'none';
+  }
+
+  // Close the modal if the user clicks outside of it
+  window.onclick = function(event) {
+    const modal = document.getElementById('info-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- free_mode_page.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Kawaii Squad | VRCScannerTool – Free Mode</title>
+    <link rel="icon" href="{{ url_for('static', filename='icon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='free.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body onload="loadAnimation()">
+    <div class="glass-container">
+        <div id="intro-container">
+            <h1 id="main-title">Free Mode</h1>
+            <img id="kawaii-img" src="{{ url_for('static', filename='kawaii.png') }}" alt="Kawaii Squad">
+            <div id="credit-section">
+                <p id="credit-text">Credits: Kawaii Squad Dev Team</p>
+				<p id="credit-text">Dev Kaichi-Sama - Freakiv3 </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
